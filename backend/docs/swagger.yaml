@@ -1,0 +1,1831 @@
+basePath: /
+definitions:
+  entity.AssignRoleMenusDto:
+    properties:
+      id:
+        description: 角色id
+        type: integer
+      menuIds:
+        items:
+          type: integer
+        type: array
+    required:
+    - id
+    - menuIds
+    type: object
+  entity.BatchDeleteLoginLogDto:
+    properties:
+      ids:
+        items:
+          type: integer
+        type: array
+    type: object
+  entity.BatchDeleteOpLogDto:
+    properties:
+      ids:
+        items:
+          type: integer
+        type: array
+    type: object
+  entity.BatchDeletePostsDto:
+    properties:
+      postIds:
+        items:
+          type: integer
+        minItems: 1
+        type: array
+    required:
+    - postIds
+    type: object
+  entity.CreateAdminDto:
+    properties:
+      deptID:
+        type: integer
+      email:
+        type: string
+      nickname:
+        type: string
+      note:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      postID:
+        type: integer
+      roleID:
+        type: integer
+      staus:
+        enum:
+        - 1
+        - 2
+        type: integer
+      username:
+        type: string
+    required:
+    - deptID
+    - email
+    - nickname
+    - password
+    - phone
+    - postID
+    - roleID
+    - staus
+    - username
+    type: object
+  entity.CreateDeptDto:
+    properties:
+      deptName:
+        type: string
+      deptType:
+        enum:
+        - 1
+        - 2
+        - 3
+        type: integer
+      parentID:
+        type: integer
+    required:
+    - deptName
+    - deptType
+    type: object
+  entity.CreateMenuDto:
+    properties:
+      menuIcon:
+        type: string
+      menuName:
+        type: string
+      menuType:
+        enum:
+        - 1
+        - 2
+        - 3
+        type: integer
+      menyStatus:
+        enum:
+        - 1
+        - 2
+        type: integer
+      parentID:
+        type: integer
+      sort:
+        type: integer
+      url:
+        type: string
+      value:
+        type: string
+    required:
+    - menuIcon
+    - menuName
+    - menuType
+    type: object
+  entity.CreateRoleDto:
+    properties:
+      description:
+        type: string
+      roleKey:
+        type: string
+      roleName:
+        type: string
+      roleStatus:
+        enum:
+        - 1
+        - 2
+        type: integer
+    required:
+    - roleKey
+    - roleName
+    type: object
+  entity.CreateSysPostDto:
+    properties:
+      postCode:
+        type: string
+      postName:
+        type: string
+      psotStatus:
+        enum:
+        - 1
+        - 2
+        type: integer
+      remark:
+        type: string
+    required:
+    - postCode
+    - postName
+    type: object
+  entity.DeleteAdminDto:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.DeleteDeptDto:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.DeleteLoginLogDto:
+    properties:
+      id:
+        type: integer
+    type: object
+  entity.DeleteMenuDto:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.DeleteOpLogDto:
+    properties:
+      id:
+        type: integer
+    type: object
+  entity.DeletePostByIdDto:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.DeleteRoleDto:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.GetAdminByIdDto:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.GetDeptByIdDto:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.GetMenuByIdDto:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.GetPostByIdDto:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.GetRoleByIdDto:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.GetRoleMenusDto:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.LoginDto:
+    properties:
+      captchaId:
+        type: string
+      captchaImage:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    required:
+    - captchaId
+    - captchaImage
+    - password
+    - username
+    type: object
+  entity.ResetPasswordDto:
+    properties:
+      id:
+        type: integer
+      newPassword:
+        type: string
+    required:
+    - id
+    type: object
+  entity.UpdateAdminDto:
+    properties:
+      deptId:
+        type: integer
+      email:
+        type: string
+      id:
+        type: integer
+      nickname:
+        type: string
+      note:
+        type: string
+      phone:
+        type: string
+      postId:
+        type: integer
+      roleId:
+        type: integer
+      status:
+        enum:
+        - 1
+        - 2
+        type: integer
+      username:
+        type: string
+    required:
+    - id
+    type: object
+  entity.UpdateAdminStatusDto:
+    properties:
+      id:
+        type: integer
+      newStatus:
+        enum:
+        - 1
+        - 2
+        type: integer
+    required:
+    - id
+    type: object
+  entity.UpdatePasswordDto:
+    properties:
+      newPassword:
+        type: string
+      password:
+        type: string
+      rePassword:
+        type: string
+    required:
+    - newPassword
+    - password
+    - rePassword
+    type: object
+  entity.UpdatePersonalDto:
+    properties:
+      email:
+        type: string
+      icon:
+        type: string
+      nichname:
+        type: string
+      note:
+        type: string
+      phone:
+        type: string
+      username:
+        type: string
+    type: object
+  entity.UpdatePostStatusDto:
+    properties:
+      id:
+        type: integer
+      newStatus:
+        enum:
+        - 1
+        - 2
+        type: integer
+    required:
+    - id
+    type: object
+  entity.UpdateRoleDto:
+    properties:
+      description:
+        type: string
+      id:
+        type: integer
+      roleKey:
+        type: string
+      roleName:
+        type: string
+      roleStatus:
+        enum:
+        - 1
+        - 2
+        type: integer
+    required:
+    - id
+    type: object
+  entity.UpdateRoleStatusDto:
+    properties:
+      id:
+        type: integer
+      newStatus:
+        enum:
+        - 1
+        - 2
+        type: integer
+    required:
+    - id
+    type: object
+  entity.UpdateSysDeptDto:
+    properties:
+      deptName:
+        type: string
+      deptStatus:
+        enum:
+        - 1
+        - 2
+        type: integer
+      deptTyep:
+        enum:
+        - 1
+        - 2
+        - 3
+        type: integer
+      id:
+        type: integer
+      parentID:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.UpdateSysMenuDto:
+    properties:
+      id:
+        type: integer
+      menuIcon:
+        type: string
+      menuName:
+        type: string
+      menuType:
+        enum:
+        - 1
+        - 2
+        - 3
+        type: integer
+      menyStatus:
+        enum:
+        - 1
+        - 2
+        type: integer
+      parentID:
+        type: integer
+      sort:
+        type: integer
+      url:
+        type: string
+      value:
+        type: string
+    required:
+    - id
+    type: object
+  entity.UpdateSysPostDto:
+    properties:
+      id:
+        type: integer
+      postCode:
+        type: string
+      postName:
+        type: string
+      postStatus:
+        enum:
+        - 1
+        - 2
+        type: integer
+      remark:
+        type: string
+    required:
+    - id
+    type: object
+  response.Response:
+    properties:
+      code:
+        type: integer
+      data: {}
+      message:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: 后台管理系统API接口文档
+  title: go-admin 后台管理系统
+  version: "1.0"
+paths:
+  /api/adminService/createAdmin:
+    post:
+      consumes:
+      - application/json
+      description: 创建用户
+      parameters:
+      - description: 创建用户请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.CreateAdminDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 创建用户
+      tags:
+      - 用户管理
+  /api/adminService/deleteAdmin:
+    post:
+      consumes:
+      - application/json
+      description: 删除用户
+      parameters:
+      - description: 删除用户请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.DeleteAdminDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 删除用户
+      tags:
+      - 用户管理
+  /api/adminService/getAdminById:
+    post:
+      consumes:
+      - application/json
+      description: 根据id查询用户
+      parameters:
+      - description: 根据id查询用户请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.GetAdminByIdDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 根据id查询用户
+      tags:
+      - 用户管理
+  /api/adminService/getAdminList:
+    get:
+      consumes:
+      - application/json
+      description: 查询用户列表
+      parameters:
+      - description: 页码
+        in: query
+        name: pageNum
+        type: integer
+      - description: 页大小
+        in: query
+        name: pageSize
+        type: integer
+      - description: 用户名
+        in: query
+        name: username
+        type: string
+      - description: 状态
+        in: query
+        name: status
+        type: integer
+      - description: 开始时间
+        in: query
+        name: beginTime
+        type: string
+      - description: 结束时间
+        in: query
+        name: endTime
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 查询用户列表
+      tags:
+      - 用户管理
+  /api/adminService/resetPassword:
+    post:
+      consumes:
+      - application/json
+      description: 重置用户密码
+      parameters:
+      - description: 重置密码请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.ResetPasswordDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 重置用户密码
+      tags:
+      - 用户管理
+  /api/adminService/updateAdmin:
+    post:
+      consumes:
+      - application/json
+      description: 修改用户信息
+      parameters:
+      - description: 修改用户请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.UpdateAdminDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 修改用户信息
+      tags:
+      - 用户管理
+  /api/adminService/updateAdminStatus:
+    post:
+      consumes:
+      - application/json
+      description: 修改用户状态
+      parameters:
+      - description: 修改用户状态请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.UpdateAdminStatusDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 修改用户状态
+      tags:
+      - 用户管理
+  /api/adminService/updatePassword:
+    post:
+      consumes:
+      - application/json
+      description: 修改个人密码
+      parameters:
+      - description: 修改个人密码请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.UpdatePasswordDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 修改个人密码
+      tags:
+      - 用户管理
+  /api/adminService/updatePersonal:
+    post:
+      consumes:
+      - application/json
+      description: 修改个人资料
+      parameters:
+      - description: 修改个人资料请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.UpdatePersonalDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 修改个人资料
+      tags:
+      - 用户管理
+  /api/captcha:
+    get:
+      consumes:
+      - application/json
+      description: 获取验证码
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: 获取验证码
+      tags:
+      - 无需认证接口
+  /api/deptService/createDept:
+    post:
+      consumes:
+      - application/json
+      description: 创建部门
+      parameters:
+      - description: 创建部门请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.CreateDeptDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 创建部门
+      tags:
+      - 部门管理
+  /api/deptService/deleteDept:
+    post:
+      consumes:
+      - application/json
+      description: 根据id删除部门
+      parameters:
+      - description: 删除部门请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.DeleteDeptDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 根据id删除部门
+      tags:
+      - 部门管理
+  /api/deptService/getDeptById:
+    post:
+      consumes:
+      - application/json
+      description: 根据id查询部门
+      parameters:
+      - description: 根据id查询部门请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.GetDeptByIdDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 根据id查询部门
+      tags:
+      - 部门管理
+  /api/deptService/getDeptDropdown:
+    get:
+      consumes:
+      - application/json
+      description: 部门下拉列表
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 部门下拉列表
+      tags:
+      - 部门管理
+  /api/deptService/getDeptList:
+    get:
+      consumes:
+      - application/json
+      description: 查询部门列表
+      parameters:
+      - description: 部门名称
+        in: query
+        name: deptName
+        type: string
+      - description: 部门状态
+        in: query
+        name: deptStatus
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 查询部门列表
+      tags:
+      - 部门管理
+  /api/deptService/updateDept:
+    post:
+      consumes:
+      - application/json
+      description: 修改部门信息
+      parameters:
+      - description: 修改部门请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.UpdateSysDeptDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 修改部门信息
+      tags:
+      - 部门管理
+  /api/logService/batchDeleteLoginLog:
+    post:
+      consumes:
+      - application/json
+      description: 批量删除登录日志
+      parameters:
+      - description: 批量删除登录日志请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.BatchDeleteLoginLogDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 批量删除登录日志
+      tags:
+      - 日志管理
+  /api/logService/batchDeleteOpLog:
+    post:
+      consumes:
+      - application/json
+      description: 批量操作登录日志
+      parameters:
+      - description: 批量删除操作日志请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.BatchDeleteOpLogDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 批量删除操作日志
+      tags:
+      - 日志管理
+  /api/logService/deleteLoginLog:
+    post:
+      consumes:
+      - application/json
+      description: 删除登录日志
+      parameters:
+      - description: 删除登录日志请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.DeleteLoginLogDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 删除登录日志
+      tags:
+      - 日志管理
+  /api/logService/deleteOpLog:
+    post:
+      consumes:
+      - application/json
+      description: 删除操作日志
+      parameters:
+      - description: 删除操作日志请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.DeleteOpLogDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 删除操作日志
+      tags:
+      - 日志管理
+  /api/logService/getLoginLogList:
+    get:
+      consumes:
+      - application/json
+      description: 查询登录日志列表
+      parameters:
+      - description: 页码
+        in: query
+        name: pageNum
+        type: integer
+      - description: 页大小
+        in: query
+        name: pageSize
+        type: integer
+      - description: 用户名
+        in: query
+        name: username
+        type: string
+      - description: 登录状态
+        in: query
+        name: loginStatus
+        type: integer
+      - description: 开始时间
+        in: query
+        name: beginTime
+        type: string
+      - description: 结束时间
+        in: query
+        name: endTime
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 查询登录日志列表
+      tags:
+      - 日志管理
+  /api/logService/getOperationLogList:
+    get:
+      consumes:
+      - application/json
+      description: 查询操作日志列表
+      parameters:
+      - description: 页码
+        in: query
+        name: pageNum
+        type: integer
+      - description: 页大小
+        in: query
+        name: pageSize
+        type: integer
+      - description: 用户名
+        in: query
+        name: username
+        type: string
+      - description: 开始时间
+        in: query
+        name: beginTime
+        type: string
+      - description: 结束时间
+        in: query
+        name: endTime
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 查询操作日志列表
+      tags:
+      - 日志管理
+  /api/login:
+    post:
+      consumes:
+      - application/json
+      description: 用户登录
+      parameters:
+      - description: 登录请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.LoginDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      summary: 用户登录
+      tags:
+      - 无需认证接口
+  /api/menuService/createMenu:
+    post:
+      consumes:
+      - application/json
+      description: 创建菜单
+      parameters:
+      - description: 创建菜单请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.CreateMenuDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 创建菜单
+      tags:
+      - 菜单管理
+  /api/menuService/deleteMenu:
+    post:
+      consumes:
+      - application/json
+      description: 根据id删除单个菜单
+      parameters:
+      - description: 删除菜单请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.DeleteMenuDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 根据id删除单个菜单
+      tags:
+      - 菜单管理
+  /api/menuService/getMenuById:
+    post:
+      consumes:
+      - application/json
+      description: 根据id查询菜单
+      parameters:
+      - description: 根据id查询菜单请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.GetMenuByIdDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 根据id查询菜单
+      tags:
+      - 菜单管理
+  /api/menuService/getMenuDropdown:
+    get:
+      consumes:
+      - application/json
+      description: 菜单下拉列表
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 菜单下拉列表
+      tags:
+      - 菜单管理
+  /api/menuService/getMenuList:
+    get:
+      consumes:
+      - application/json
+      description: 查询菜单列表
+      parameters:
+      - description: 菜单名称
+        in: query
+        name: menuName
+        type: string
+      - description: 菜单状态
+        in: query
+        name: menuStatus
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 查询菜单列表
+      tags:
+      - 菜单管理
+  /api/menuService/updateMenu:
+    post:
+      consumes:
+      - application/json
+      description: 修改菜单信息
+      parameters:
+      - description: 修改菜单请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.UpdateSysMenuDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 修改菜单信息
+      tags:
+      - 菜单管理
+  /api/postService/batchDeletePosts:
+    post:
+      consumes:
+      - application/json
+      description: 批量删除岗位
+      parameters:
+      - description: 要删除的岗位id列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.BatchDeletePostsDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 批量删除岗位
+      tags:
+      - 岗位管理
+  /api/postService/createPost:
+    post:
+      consumes:
+      - application/json
+      description: 创建岗位
+      parameters:
+      - description: 创建岗位的请求参数
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.CreateSysPostDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 创建岗位
+      tags:
+      - 岗位管理
+  /api/postService/deletePost:
+    post:
+      consumes:
+      - application/json
+      description: 删除单个岗位
+      parameters:
+      - description: 删除单个岗位请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.DeletePostByIdDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 删除单个岗位
+      tags:
+      - 岗位管理
+  /api/postService/getPostById:
+    post:
+      consumes:
+      - application/json
+      description: 根据id查询岗位信息
+      parameters:
+      - description: 获取岗位信息请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.GetPostByIdDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 根据id查询岗位信息
+      tags:
+      - 岗位管理
+  /api/postService/getPostDropdown:
+    get:
+      consumes:
+      - application/json
+      description: 岗位下拉列表
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 岗位下拉列表
+      tags:
+      - 岗位管理
+  /api/postService/getPostList:
+    get:
+      consumes:
+      - application/json
+      description: 分页获取岗位列表
+      parameters:
+      - description: 页码
+        in: query
+        name: pageNum
+        type: integer
+      - description: 每页数量
+        in: query
+        name: pageSize
+        type: integer
+      - description: 岗位状态：1->启用,2->禁用
+        in: query
+        name: postStatus
+        type: integer
+      - description: 岗位名称
+        in: query
+        name: postName
+        type: string
+      - description: 开始时间
+        in: query
+        name: beginTime
+        type: string
+      - description: 结束时间
+        in: query
+        name: endTime
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 获取岗位列表
+      tags:
+      - 岗位管理
+  /api/postService/updatePost:
+    post:
+      consumes:
+      - application/json
+      description: 修改岗位信息
+      parameters:
+      - description: 修改岗位请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.UpdateSysPostDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 修改岗位
+      tags:
+      - 岗位管理
+  /api/postService/updatePostStatus:
+    post:
+      consumes:
+      - application/json
+      description: 修改岗位状态
+      parameters:
+      - description: 修改岗位状态请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.UpdatePostStatusDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 修改岗位状态
+      tags:
+      - 岗位管理
+  /api/roleService/assignRoleMenus:
+    post:
+      consumes:
+      - application/json
+      description: 角色权限分配
+      parameters:
+      - description: 权限菜单列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.AssignRoleMenusDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 角色权限分配
+      tags:
+      - 角色管理
+  /api/roleService/createRole:
+    post:
+      consumes:
+      - application/json
+      description: 创建角色
+      parameters:
+      - description: 创建角色请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.CreateRoleDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 创建角色
+      tags:
+      - 角色管理
+  /api/roleService/deleteRole:
+    post:
+      consumes:
+      - application/json
+      description: 删除角色
+      parameters:
+      - description: 删除角色请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.DeleteRoleDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 删除角色
+      tags:
+      - 角色管理
+  /api/roleService/getRoleById:
+    post:
+      consumes:
+      - application/json
+      description: 根据id查询角色
+      parameters:
+      - description: 根据id查询角色请求
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.GetRoleByIdDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 根据id查询角色
+      tags:
+      - 角色管理
+  /api/roleService/getRoleDropdown:
+    get:
+      consumes:
+      - application/json
+      description: 角色下拉列表
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 角色下拉列表
+      tags:
+      - 角色管理
+  /api/roleService/getRoleList:
+    get:
+      consumes:
+      - application/json
+      description: 查询角色列表
+      parameters:
+      - description: 页码
+        in: query
+        name: pageNum
+        type: integer
+      - description: 页大小
+        in: query
+        name: pageSize
+        type: integer
+      - description: 角色状态
+        in: query
+        name: roleStatus
+        type: integer
+      - description: 角色名称
+        in: query
+        name: roleName
+        type: string
+      - description: 开始时间
+        in: query
+        name: startTime
+        type: string
+      - description: 结束时间
+        in: query
+        name: endTiem
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 查询角色列表
+      tags:
+      - 角色管理
+  /api/roleService/getRoleMenus:
+    post:
+      consumes:
+      - application/json
+      description: 查询角色权限列表
+      parameters:
+      - description: 查询角色权限
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.GetRoleMenusDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 查询角色权限列表
+      tags:
+      - 角色管理
+  /api/roleService/updateRole:
+    post:
+      consumes:
+      - application/json
+      description: 修改角色
+      parameters:
+      - description: 修改角色请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.UpdateRoleDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 修改角色
+      tags:
+      - 角色管理
+  /api/roleService/updateRoleStatus:
+    post:
+      consumes:
+      - application/json
+      description: 修改角色状态
+      parameters:
+      - description: 修改角色状态请求结构体
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/entity.UpdateRoleStatusDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 修改角色状态
+      tags:
+      - 角色管理
+  /api/upload:
+    post:
+      consumes:
+      - application/json
+      description: 单图片上传
+      parameters:
+      - description: 图片
+        in: formData
+        name: image
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - BearerAuth: []
+      summary: 单图片上传
+      tags:
+      - 文件上传
+securityDefinitions:
+  BearerAuth:
+    description: JWT认证令牌，格式Bearer <token>
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

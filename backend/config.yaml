@@ -1,0 +1,28 @@
+server:
+  host: 0.0.0.0
+  port: 8080
+  mode: debug                 # 开发时使用debug模式，发布时使用release模式
+
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  db: go_admin                # 数据库名称
+  username: ******            # mysql用户名
+  password: ******            # mysql密码
+  max_open_conns: 100
+  max_idle_conns: 20
+  log_level: error
+
+redis:
+  address: 127.0.0.1:6379
+  password: ""
+  db: 0
+
+# 日志配置
+logger:
+  filename: log/go_admin_server.log
+  level: info
+  max_size: 200
+  max_age: 30
+  max_backups: 5
+  is_console_print: true
