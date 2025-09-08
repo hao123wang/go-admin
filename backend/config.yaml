@@ -1,7 +1,7 @@
 server:
   host: 0.0.0.0
   port: 8080
-  mode: debug                 # 开发时使用debug模式，发布时使用release模式
+  mode: release               # 开发时使用debug模式，发布时使用release模式
 
 mysql:
   host: 127.0.0.1
