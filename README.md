@@ -10,6 +10,7 @@ gin+vue前后端分离的后台管理项目，基于用户-角色-权限的RBAC�
   cd go-admin/backend  
   # 安装依赖
   go mod tidy
+  # 检测配置文件config.yaml，修改其中的参数配置
   # 通过命令行迁移数据库表结构体
   go run main.go --sql  
   # 启动项目  
